@@ -15,7 +15,7 @@
                             <option value="{{$menu->id}}" @if($selectId == $menu->id) selected @endif>{{$menu->title}}</option>
                         @endforeach
                         </select><br><br>
-                        Sort By: <br>
+                        Rūšiuoti pagal: <br>
                         Pavadinimas: <input type="radio" name="sort" value="title" @if('title' == $sort) checked @endif><br>
                         {{-- Plate: <input type="radio" name="sort" value="plate" @if('plate' == $sort) checked @endif><br>
                         Make_year: <input type="radio" name="sort" value="make_year" @if('make_year' == $sort) checked @endif><br> --}}

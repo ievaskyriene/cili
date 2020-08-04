@@ -7,7 +7,7 @@
        <div class="col-md-8">
            <div class="card">
                <div class="card-header">PAVADINIMAS</div>
-
+                    <div class="card-body">
                         <form method="POST" action="{{route('menu.store')}}" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label> Name:</label>
@@ -46,6 +46,7 @@
                             @csrf
                             <button type="submit" class = "btn btn-primary">ADD</button>
                          </form>
+                    </div>
                 </div>
            </div>
        </div>
