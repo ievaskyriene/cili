@@ -24,9 +24,11 @@ class RestaurantController extends Controller
         if ($request->menu_id) {
             if ($request->sort) {
                 if ($request->sort == 'title') {
-                    $restaurants = Restaurant::where('menu_id', $request->menu_id)->orderBy('title')->get();
+                    $restaurants = Restaurant::where('menu_id', $request->menu_id)->orderBy('title', 'desc')->get();
                     $sort = 'title';
                 }
+
+                //sortByDesc
                 // elseif ($request->sort == 'price') {
                 //     $restaurants = Restaurant::where('menu_id', $request->menu_id)->orderBy('plate')->get();
                 //     $sort = 'plate';
@@ -68,9 +70,6 @@ class RestaurantController extends Controller
             }
         }
 
-        
-
-
         return view('restaurant.index', compact('restaurants','menus', 'selectId', 'sort'));
     }
 
@@ -83,7 +82,7 @@ class RestaurantController extends Controller
     {
         {
             $restaurants = Restaurant::all();
-            $menus = Menu::orderBy('title')->limit(29)->get();
+            $menus = Menu::orderBy('title', 'desc')->limit(29)->get();
             return view('restaurant.create', compact('restaurants', 'menus'));
         }
     }
